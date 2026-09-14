@@ -1,10 +1,15 @@
 {
-  "name": "ff-like-api",
+  "name": "ff-api-like",
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "ffapis": "^3.0.1"
+    "ffapis": "github:rifancorteza/ffapis"
+  },
+  "scripts": {
+    "postinstall": "node -e \"const fs=require('fs');const p='node_modules/ffapis/config/settings.yaml';if(!fs.existsSync(p)){fs.mkdirSync('node_modules/ffapis/config',{recursive:true});fs.writeFileSync(p,'ob: OB54\\nregion: sg\\n');console.log('created fallback settings.yaml')}else{console.log('settings.yaml exists')}\""
   }
 }
