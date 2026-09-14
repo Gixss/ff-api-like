@@ -1,4 +1,5 @@
 {
+  "buildCommand": "node scripts/patch-ffapis.cjs",
   "functions": {
     "api/*.js": { "maxDuration": 60 }
   }
